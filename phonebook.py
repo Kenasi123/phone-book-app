@@ -1,3 +1,5 @@
+phonebook = {}
+
 menu = """" 
 Electronic Phone Book
 =====================
@@ -10,4 +12,11 @@ Electronic Phone Book
 """ 
 print(menu)
 
-select_option = input("What do you want to do (1-5?")
+select_option = input("What do you want to do (1-5?)")
+
+if select_option == "2": 
+    name = input("What is the contacts name?") 
+    phone_number = input("What is the contacts phone number?") 
+    phonebook[name] = phone_number 
+    print("Contacts added ssuccesfully")
+    print(menu) 
