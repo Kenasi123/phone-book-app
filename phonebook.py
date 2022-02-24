@@ -1,5 +1,5 @@
 hasQuit = False
-phonebook = {"Kenasia": "7708414156"
+phonebook = {"Kenasia": "7708414156",
 "Drake":"9175553249"}
 
 menu = """" 
@@ -42,8 +42,9 @@ while not(hasQuit):
         else:
             print("Theres no contact with that name.")  
     elif select_option == "4": 
-        print("Contacts displayed below")
-        print(phonebook) 
+         for name,phone_number in phonebook.items(): 
+             print("Found an entry for:" + name,phone_number)
+        
 
             
   
