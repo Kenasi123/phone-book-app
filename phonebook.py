@@ -1,5 +1,6 @@
 hasQuit = False
-phonebook = {}
+phonebook = {"Kenasia": "7708414156",
+"Drake":"9175553249"}
 
 menu = """" 
 Electronic Phone Book
@@ -19,9 +20,12 @@ while not(hasQuit):
 
     if select_option == "2": 
         name = input("What is the contacts name?") 
-        phone_number = input("What is the contacts phone number?") 
+        phonebook.update({"Name": name})
+        phone_number = input("What is the contacts phone number?")
+        phonebook.update({"Phone number": phone_number}) 
         phonebook[name] = phone_number 
-        print("Contacts added ssuccesfully")
+        print(phonebook)
+        print("Contacts added succesfully")
     elif select_option == "1":
         name = input("What contact's number would you like?") 
         if phonebook.get(name) == None: 
@@ -29,4 +33,18 @@ while not(hasQuit):
         else: 
              print("Here's their number: ", phonebook[name]) 
     elif select_option == "5": 
-        hasQuit = True 
+        hasQuit = True  
+    elif select_option == "3": 
+        name = input("Which contact do you want to remove?") 
+        if  phonebook.get(name) != None:
+            del phonebook[name] 
+            print("Contact removed")
+        else:
+            print("Theres no contact with that name.")  
+    elif select_option == "4": 
+         for name,phone_number in phonebook.items(): 
+             print("Found an entry for:" + name,phone_number)
+        
+
+            
+  
